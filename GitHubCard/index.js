@@ -3,7 +3,7 @@
            https://api.github.com/users/<your name>
 */
 const axios = require('axios');
-axios.get('/user?ID=12345')
+axios.get('https://dog.ceo/api/breeds/list/all')
   .then(function (response) {
     // handle success
     console.log(response);
@@ -11,9 +11,6 @@ axios.get('/user?ID=12345')
   .catch(function (error) {
     // handle error
     console.log(error);
-  })
-  .then(function () {
-    // always executed
   });
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
