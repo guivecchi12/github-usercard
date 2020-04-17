@@ -28,15 +28,14 @@
 
 
 const followersArray = [
-  // 'travisbrown',
-  // 'KyleAMathews',
-  // 'paulmillr',
   'guivecchi12',
+  'robertelias',
   'tetondan',
   'dustinmyers',
   'justsml',
   'luishrd',
-  'bigknell'];
+  'bigknell'
+];
 
 
 let gitHub = (string)=>{ 
@@ -44,9 +43,6 @@ let gitHub = (string)=>{
     .then(function (response) {
       let cards = document.querySelector(".cards");
       cards.appendChild(compCreator(response));
-    })
-    .then((response)=>{
-      response.data.followers.forEach(gitHub);
     })
     .catch(console.log); 
   };
@@ -80,7 +76,7 @@ function compCreator(obj){
   username.textContent = obj.data.login;
 
   let location = document.createElement('p');
-  location.textContent = "Location: ",obj.data.location;
+  location.textContent = "Location: "+ obj.data.location;
 
   let profile = document.createElement('p');
   profile.textContent = "Profile: "
@@ -90,13 +86,13 @@ function compCreator(obj){
   profile.appendChild(a);
 
   let followers = document.createElement('p');
-  followers.textContent = "Followers: ", obj.data.followers;
+  followers.textContent = "Followers: "+ obj.data.followers;
 
   let following = document.createElement('p');
-  following.textContent = "Following: ", obj.data.following;
+  following.textContent = "Following: "+ obj.data.following;
 
   let bio = document.createElement('p');
-  bio.textContent = "Bio: ", obj.data.bio;
+  bio.textContent = "Bio: "+ obj.data.bio;
 
   cardInfo.appendChild(name);
   cardInfo.appendChild(username);
