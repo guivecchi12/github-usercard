@@ -28,6 +28,9 @@
 
 
 const followersArray = [
+  // 'travisbrown',
+  // 'KyleAMathews',
+  // 'paulmillr',
   'guivecchi12',
   'tetondan',
   'dustinmyers',
@@ -41,6 +44,9 @@ let gitHub = (string)=>{
     .then(function (response) {
       let cards = document.querySelector(".cards");
       cards.appendChild(compCreator(response));
+    })
+    .then((response)=>{
+      response.data.followers.forEach(gitHub);
     })
     .catch(console.log); 
   };
@@ -101,8 +107,8 @@ function compCreator(obj){
   cardInfo.appendChild(bio);
 
 
-  console.log(obj);
-  console.log(card);
+  // console.log(obj);
+  // console.log(card);
 
   return card;
 };
